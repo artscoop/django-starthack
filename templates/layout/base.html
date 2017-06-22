@@ -1,0 +1,20 @@
+<html>
+<head>
+    <title>
+        {% block head_title %}
+            Basic title
+        {% endblock %}
+    </title>
+</head>
+
+<body>
+<h1>
+    {% block page_title %}
+        Base heading information
+    {% endblock %}
+</h1>
+{% block content %}
+    To be replaced
+{% endblock content %}
+</body>
+</html>

@@ -1,0 +1,8 @@
+{% extends "layout/base.html" %}
+{# context: object (Manufacturer) #}
+
+{% block content %}
+    {# Only display basic manufacturer info for the sake of an example #}
+    <p>{{ manufacturer.name }}</p>
+    <p><a href="{% url "tyres:manufacturer-update" pk=manufacturer.pk %}">Edit</a></p>
+{% endblock %}

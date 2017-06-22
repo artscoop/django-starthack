@@ -1,0 +1,12 @@
+{% extends "layout/base.html" %}
+{% load i18n %}
+{# context: object (Manufacturer), form #}
+
+{% block content %}
+    <form method="post" action="">
+        {% csrf_token %}
+        {{ form }} {# no need for form media #}
+        {% trans "Edit,Save new" as submit_alternatives %}
+        <input type="submit" value="{{ object.pk|yesno:submit_alternatives }}">
+    </form>
+{% endblock %}
