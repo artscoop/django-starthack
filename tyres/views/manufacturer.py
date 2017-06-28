@@ -2,12 +2,21 @@
 from django.urls.base import reverse_lazy
 from django.views.generic.detail import DetailView
 from django.views.generic.edit import DeleteView, CreateView, UpdateView
+from django.views.generic.list import ListView
 
 from tyres.models.manufacturer import Manufacturer
 
 
 # Symbols imported with the wildcard
-__all__ = ['ManufacturerCreate', 'ManufacturerDelete', 'ManufacturerDetail', 'ManufacturerUpdate']
+__all__ = ['ManufacturerList', 'ManufacturerCreate', 'ManufacturerDelete', 'ManufacturerDetail', 'ManufacturerUpdate']
+
+
+class ManufacturerList(ListView):
+    """ Class view to display the whole list of manufacturers """
+
+    # Configuration
+    model = Manufacturer
+    template_name = 'tyres/manufacturer/manufacturer-list.html'
 
 
 class ManufacturerDetail(DetailView):

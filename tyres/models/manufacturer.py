@@ -39,3 +39,13 @@ class Manufacturer(models.Model):
     def get_absolute_url(self):
         """ Return the URL to access this model view page """
         return reverse('tyres:manufacturer-detail', kwargs={'pk': self.id})
+
+    # Getters and properties
+    def get_tyre_models(self):
+        """
+        Returns the tyre models linked to this manufacturer
+
+        :return: A queryset of TyreModel that have a FK to this manufacturer
+        :rtype: models.QuerySet<TyreModel>
+        """
+        return self.tyre_models.all()

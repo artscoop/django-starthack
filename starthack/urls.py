@@ -20,6 +20,6 @@ from starthack.project.views.index import Index
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^user/', include('tyres.urls')),
+    url(r'^tyres/', include('tyres.urls')),
     url(r'^$', Index.as_view(), name='index')
 ]

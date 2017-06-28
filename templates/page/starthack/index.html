@@ -1,0 +1,10 @@
+{% extends "layout/base.html" %}
+{% load i18n %}
+
+{% block content %}
+    {# Just display links for manufacturer creation and list #}
+    <ul>
+        <li><a href="{% url "tyres:manufacturer-list" %}">{% trans "Manufacturers list" %}</a></li>
+        <li><a href="{% url "tyres:manufacturer-create" %}">{% trans "Create manufacturer" %}</a></li>
+    </ul>
+{% endblock content %}
